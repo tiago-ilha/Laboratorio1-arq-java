@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title><ui:insert name="title">JSP Page</ui:insert></title>
+<base
+	href="http://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.requestContextPath}/" />
+<link rel="stylesheet" type="text/css"
+	href="resources/css/arquitetura.css" />
+</head>
+<body>
+<f:view>
+	<table width="1050px" align="center" cellpadding="0">
+		<tr>
+			<td><ui:insert name="topo" /></td>
+		</tr>
+		<tr>
+			<td><ui:insert name="menu" /></td>
+		</tr>
+		<tr>
+			<td><rich:panel style="width: 995px">
+				<ui:insert name="dados" />
+			</rich:panel></td>
+		</tr>
+
+	</table>
+
+</f:view>
+
+</body>
+</html>

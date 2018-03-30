@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="1.2" 
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+
+
+    <managed-bean>
+        <managed-bean-name>produtoController</managed-bean-name>
+        <managed-bean-class>br.nom.penha.bruno.arquiteto.web.controller.ProdutoController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>clienteController</managed-bean-name>
+        <managed-bean-class>br.nom.penha.bruno.arquiteto.web.controller.ClienteController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>categoriaController</managed-bean-name>
+        <managed-bean-class>br.nom.penha.bruno.arquiteto.web.controller.CategoriaController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>compraController</managed-bean-name>
+        <managed-bean-class>br.nom.penha.bruno.arquiteto.web.controller.CompraController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>pedidoController</managed-bean-name>
+        <managed-bean-class>br.nom.penha.bruno.arquiteto.web.controller.PedidoController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    <converter>
+        <converter-for-class>br.nom.penha.bruno.arquiteto.model.Categoria</converter-for-class>
+        <converter-class>br.nom.penha.bruno.arquiteto.web.converter.ConversorCategoria</converter-class>
+    </converter>
+    <converter>
+        <converter-for-class>br.nom.penha.bruno.arquiteto.model.Banco</converter-for-class>
+        <converter-class>br.nom.penha.bruno.arquiteto.web.converter.ConversorBanco</converter-class>
+    </converter>
+    <converter>
+        <converter-for-class>br.nom.penha.bruno.arquiteto.model.BandeiraCartaoCredito</converter-for-class>
+        <converter-class>br.nom.penha.bruno.arquiteto.web.converter.ConversorBandeira</converter-class>
+    </converter>
+
+
+    <navigation-rule> 
+        <navigation-case> 
+            <from-outcome>catalogoProdutos</from-outcome> 
+            <to-view-id>/compra/catalogoProdutos.xhtml</to-view-id> 
+        </navigation-case> 
+        <navigation-case> 
+            <from-outcome>carrinhoCompras</from-outcome> 
+            <to-view-id>/compra/carrinhoCompras.xhtml</to-view-id> 
+        </navigation-case> 
+        <navigation-case> 
+            <from-outcome>finalizarPedido</from-outcome> 
+            <to-view-id>/compra/finalizarPedido.xhtml</to-view-id> 
+        </navigation-case> 
+        <navigation-case> 
+            <from-outcome>pedidoEnviado</from-outcome> 
+            <to-view-id>/compra/pedidoEnviado.xhtml</to-view-id> 
+        </navigation-case> 
+        <navigation-case> 
+            <from-outcome>listarProdutos</from-outcome> 
+            <to-view-id>/produto/List.xhtml</to-view-id> 
+        </navigation-case> 
+        <navigation-case> 
+            <from-outcome>editarProduto</from-outcome> 
+            <to-view-id>/produto/Edit.xhtml</to-view-id> 
+        </navigation-case> 
+        <navigation-case> 
+            <from-outcome>listarCategorias</from-outcome> 
+            <to-view-id>/categoria/List.xhtml</to-view-id> 
+        </navigation-case> 
+        <navigation-case> 
+            <from-outcome>editarCategoria</from-outcome> 
+            <to-view-id>/categoria/Edit.xhtml</to-view-id> 
+        </navigation-case> 
+        <navigation-case> 
+            <from-outcome>listarClientes</from-outcome> 
+            <to-view-id>/cliente/List.xhtml</to-view-id> 
+        </navigation-case> 
+        <navigation-case> 
+            <from-outcome>editarCliente</from-outcome> 
+            <to-view-id>/cliente/Edit.xhtml</to-view-id> 
+        </navigation-case> 
+        <navigation-case> 
+            <from-outcome>listarPedidos</from-outcome> 
+            <to-view-id>/pedido/List.xhtml</to-view-id> 
+        </navigation-case> 
+        <navigation-case> 
+            <from-outcome>verPedido</from-outcome> 
+            <to-view-id>/pedido/View.xhtml</to-view-id> 
+        </navigation-case> 
+    </navigation-rule>
+
+    <!--application>
+        <view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
+    </application-->
+    
+    <!-- Configuração para o JBoss AS7 -->
+    <application>
+    	<message-bundle>resources.application</message-bundle>  
+        <view-handler>org.ajax4jsf.application.AjaxViewHandler</view-handler>
+        <locale-config>
+        	<default-locale>en</default-locale>
+        </locale-config>  
+    </application>
+    
+    
+</faces-config>

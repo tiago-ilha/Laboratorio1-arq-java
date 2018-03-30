@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+  <persistence-unit name="lojavirtualPU" transaction-type="JTA">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <jta-data-source>jdbc/lojaVirtualDS</jta-data-source>
+    <class>br.nom.penha.bruno.arquiteto.model.Cliente</class>
+    <class>br.nom.penha.bruno.arquiteto.model.Pagamento</class>
+    <class>br.nom.penha.bruno.arquiteto.model.PagamentoBoleto</class>
+    <class>br.nom.penha.bruno.arquiteto.model.PagamentoCartaoCredito</class>
+    <class>br.nom.penha.bruno.arquiteto.model.Categoria</class>
+    <class>br.nom.penha.bruno.arquiteto.model.ItemCompra</class>
+    <class>br.nom.penha.bruno.arquiteto.model.Pedido</class>
+    <class>br.nom.penha.bruno.arquiteto.model.Produto</class>
+    <class>br.nom.penha.bruno.arquiteto.model.ProdutoDigital</class>
+    <class>br.nom.penha.bruno.arquiteto.model.ProdutoMaterial</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <property name="hibernate.show_sql" value="true"/>
+      <!-- necessario para compatibilidade entre Hibernate 4.3.x e Glassfish 4 -->
+      <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform" />
+    </properties>
+  </persistence-unit>
+</persistence>
